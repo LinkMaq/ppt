@@ -99,28 +99,11 @@
 
 .slide-03-header {
     text-align: left;
-    max-width: min(1120px, calc(100% - 320px));
+    max-width: min(1040px, calc(100% - 380px));
     margin: 0 0 26px;
     opacity: 0;
     transform: translateY(-24px);
     transition: opacity 0.75s ease 0.15s, transform 0.75s ease 0.15s;
-}
-
-.slide-03-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 16px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(30, 96, 248, 0.14);
-    color: var(--color-primary);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    box-shadow: 0 10px 24px rgba(30, 96, 248, 0.08);
 }
 
 .slide-03-title {
@@ -152,7 +135,7 @@
 }
 
 .slide-03-mission-strip {
-    width: min(1180px, calc(100% - 320px));
+    width: min(1180px, calc(100% - 380px));
     margin: 0;
     display: flex;
     align-items: center;

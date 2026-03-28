@@ -12,8 +12,7 @@
 ## 布局体系 (Center Stage Layout)
 采用 **白底中心发散式架构图 + 顶部使命说明 + 底部价值总结**：
 1. **顶部标题区**
-   - 使用 `slide-03-eyebrow`、`slide-03-title`、`slide-03-subtitle` 三层结构。
-   - 先给出 “Why Rune, Why Now” 的语义引导，再落到页面主标题和产品定位。
+   - 使用 `slide-03-title`、`slide-03-subtitle` 两层结构，直接进入主题。
    - 标题区改为参考 Slide 02 的左对齐布局，并在右上角水印区域预留安全留白，避免标题与水印争抢视觉焦点。
 2. **使命条 (`slide-03-mission-strip`)**
    - 以横向条带明确表达“打通底层算力、模型资产与应用入口”的使命。
