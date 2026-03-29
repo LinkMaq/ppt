@@ -781,47 +781,40 @@
                         </div>
 
                         <div class="slide-08-gallery-card">
-                            <div class="slide-08-gallery-head">
-                                <span class="slide-08-gallery-label">场景界面</span>
-                                <p>3 x 2 Product Simulations</p>
-                            </div>
-
                             <div class="slide-08-gallery-grid">
+                                <!-- 1. 开发环境 -->
                                 <figure class="slide-08-gallery-item">
                                     <div class="slide-08-image-slot sim-dev-env">
                                         <div class="slide-08-sim-window">
                                             <div class="slide-08-sim-head">
                                                 <div class="slide-08-sim-dots"><span></span><span></span><span></span></div>
+                                                <div class="slide-08-sim-title">jupyter-workspace - VSCode</div>
                                             </div>
-                                            <div class="slide-08-dev-hero">
+                                            <div class="slide-08-dev-ui">
                                                 <div class="slide-08-dev-sidebar">
-                                                    <span class="active">Explorer</span>
-                                                    <span>Search</span>
-                                                    <span>Git</span>
-                                                    <span>SSH</span>
+                                                    <span class="active"><i class="icon-files"></i>EXPLORER</span>
+                                                    <span><i class="icon-search"></i>SEARCH</span>
+                                                    <span><i class="icon-git"></i>SOURCE</span>
                                                 </div>
                                                 <div class="slide-08-dev-main">
-                                                    <div class="slide-08-dev-toolbar">
-                                                        <span class="slide-08-dev-app">VSCode IDE</span>
-                                                        <span class="slide-08-dev-badge online">SSH Connected</span>
-                                                    </div>
                                                     <div class="slide-08-dev-tabs">
-                                                        <span class="active">app.py</span>
-                                                        <span>launch.json</span>
-                                                        <span>terminal</span>
+                                                        <span class="active">train.py</span>
+                                                        <span>config.yaml</span>
                                                     </div>
-                                                    <div class="slide-08-code-lines">
-                                                        <span></span>
-                                                        <span></span>
-                                                        <span></span>
-                                                        <span></span>
-                                                        <span></span>
-                                                        <span></span>
+                                                    <div class="slide-08-dev-code">
+                                                        <div><span class="hl-keyword">import</span> <span class="hl-name">torch</span></div>
+                                                        <div><span class="hl-keyword">from</span> <span class="hl-name">transformers</span> <span class="hl-keyword">import</span> <span class="hl-class">AutoModelForCausalLM</span></div>
+                                                        <br>
+                                                        <div><span class="hl-comment"># Initialize DeepSeek tuning</span></div>
+                                                        <div><span class="hl-var">model_id</span> = <span class="hl-string">"deepseek-ai/DeepSeek-V3"</span></div>
+                                                        <div><span class="hl-var">model</span> = <span class="hl-class">AutoModelForCausalLM</span>.from_pretrained(</div>
+                                                        <div class="indent"><span class="hl-var">model_id</span>, device_map=<span class="hl-string">"auto"</span></div>
+                                                        <div>)</div>
                                                     </div>
                                                     <div class="slide-08-dev-statusbar">
-                                                        <span>SSH: gpu-cluster-03</span>
+                                                        <span class="ssh-badge">SSH: gpu-cluster-03</span>
                                                         <span>Python 3.11</span>
-                                                        <span>Port 22</span>
+                                                        <span>UTF-8</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -829,152 +822,165 @@
                                     </div>
                                     <figcaption>开发环境</figcaption>
                                 </figure>
+
+                                <!-- 2. 推理服务 -->
                                 <figure class="slide-08-gallery-item">
                                     <div class="slide-08-image-slot sim-inference-service">
                                         <div class="slide-08-sim-window">
                                             <div class="slide-08-sim-head">
                                                 <div class="slide-08-sim-dots"><span></span><span></span><span></span></div>
+                                                <div class="slide-08-sim-title">Service Dashboard</div>
                                             </div>
-                                            <div class="slide-08-service-banner">
-                                                <span class="service-model">DeepSeek-V3.2</span>
-                                                <span class="service-state">Running</span>
-                                            </div>
-                                            <div class="slide-08-service-metrics">
-                                                <div><strong>8</strong><span>GPU Cards</span></div>
-                                                <div><strong>2.4k</strong><span>Requests/min</span></div>
-                                                <div><strong>71%</strong><span>Overall Load</span></div>
-                                            </div>
-                                            <div class="slide-08-service-loadbar"><i></i></div>
-                                            <div class="slide-08-service-list">
-                                                <span><b>Service</b><em>ds-v3-prod</em></span>
-                                                <span><b>Endpoint</b><em>/v1/chat/completions</em></span>
-                                                <span><b>Concurrency</b><em>128 active sessions</em></span>
+                                            <div class="slide-08-inference-ui">
+                                                <div class="slide-08-inf-header">
+                                                    <div class="inf-title">DeepSeek-V3.2 API</div>
+                                                    <div class="inf-status"><span class="pulse"></span> Active</div>
+                                                </div>
+                                                <div class="slide-08-inf-stats">
+                                                    <div class="inf-stat"><strong>2,450</strong><span>Req/min</span></div>
+                                                    <div class="inf-stat"><strong>18ms</strong><span>P99 Latency</span></div>
+                                                    <div class="inf-stat"><strong>8x</strong><span>H100 GPUs</span></div>
+                                                </div>
+                                                <div class="slide-08-inf-chart">
+                                                    <span>Traffic (Last 15m)</span>
+                                                    <div class="inf-bars">
+                                                        <i style="height: 30%"></i><i style="height: 50%"></i>
+                                                        <i style="height: 40%"></i><i style="height: 80%"></i>
+                                                        <i style="height: 60%"></i><i style="height: 90%"></i>
+                                                        <i style="height: 70%"></i><i style="height: 100%"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="slide-08-inf-endpoint">
+                                                    <code>POST https://api.rune.ai/v1/chat/completions</code>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <figcaption>推理服务</figcaption>
                                 </figure>
+
+                                <!-- 3. 虚拟化桌面 -->
                                 <figure class="slide-08-gallery-item">
                                     <div class="slide-08-image-slot sim-desktop">
-                                        <div class="slide-08-sim-window">
-                                            <div class="slide-08-sim-head">
-                                                <div class="slide-08-sim-dots"><span></span><span></span><span></span></div>
+                                        <div class="slide-08-desktop-ui">
+                                            <div class="slide-08-desktop-wallpaper">
+                                                <div class="desktop-icons">
+                                                    <div class="d-icon">📄<span>Data</span></div>
+                                                    <div class="d-icon">📁<span>Models</span></div>
+                                                    <div class="d-icon">⚙️<span>Tools</span></div>
+                                                </div>
+                                                <div class="desktop-app-window">
+                                                    <div class="app-titlebar">
+                                                        <span>NVIDIA System Management</span>
+                                                        <div class="app-controls"><span></span><span></span><span></span></div>
+                                                    </div>
+                                                    <div class="app-content">
+                                                        <div class="gpu-box">GPU 0: RTX 4090 <span>[||||||||  ] 78%</span></div>
+                                                        <div class="gpu-box">GPU 1: RTX 4090 <span>[||||||||||] 92%</span></div>
+                                                        <div class="gpu-box">GPU 2: RTX 4090 <span>[||||      ] 45%</span></div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="slide-08-desktop-stage">
-                                                <div class="slide-08-desktop-icons">
-                                                    <span>RDP</span>
-                                                    <span>Files</span>
-                                                    <span>GPU</span>
-                                                </div>
-                                                <div class="slide-08-desktop-window large-window">
-                                                    <div class="desktop-toolbar">
-                                                        <span>Windows 11 Desktop</span>
-                                                        <span>Fullscreen Session</span>
-                                                    </div>
-                                                    <div class="desktop-panels large-layout">
-                                                        <span></span>
-                                                        <span></span>
-                                                        <span></span>
-                                                        <span></span>
-                                                    </div>
-                                                </div>
-                                                <div class="slide-08-taskbar">
-                                                    <span></span><span></span><span></span><span></span>
-                                                </div>
+                                            <div class="slide-08-desktop-taskbar">
+                                                <div class="tb-start">⊞</div>
+                                                <div class="tb-icon active">⚡</div>
+                                                <div class="tb-icon">💻</div>
+                                                <div class="tb-icon">🌐</div>
+                                                <div class="tb-time">10:42 AM</div>
                                             </div>
                                         </div>
                                     </div>
                                     <figcaption>虚拟化桌面</figcaption>
                                 </figure>
+
+                                <!-- 4. 实验数据 -->
                                 <figure class="slide-08-gallery-item">
                                     <div class="slide-08-image-slot sim-experiment">
                                         <div class="slide-08-sim-window">
                                             <div class="slide-08-sim-head">
                                                 <div class="slide-08-sim-dots"><span></span><span></span><span></span></div>
+                                                <div class="slide-08-sim-title">Distributed Training</div>
                                             </div>
-                                            <div class="slide-08-exp-series">
-                                                <div class="slide-08-line-card">
-                                                    <div class="line-card-head"><span>Learning Rate</span><em>Step</em></div>
-                                                    <svg viewBox="0 0 180 48" preserveAspectRatio="none">
-                                                        <polyline points="0,8 28,12 56,18 84,25 112,31 140,36 180,40"></polyline>
-                                                    </svg>
+                                            <div class="slide-08-exp-ui">
+                                                <div class="exp-progress">
+                                                    <div class="exp-text"><span>Epoch 4/10</span><strong>40%</strong></div>
+                                                    <div class="exp-bar"><i style="width: 40%"></i></div>
                                                 </div>
-                                                <div class="slide-08-line-card">
-                                                    <div class="line-card-head"><span>Loss</span><em>Epoch</em></div>
-                                                    <svg viewBox="0 0 180 48" preserveAspectRatio="none">
-                                                        <polyline points="0,40 28,33 56,28 84,22 112,17 140,12 180,8"></polyline>
-                                                    </svg>
-                                                </div>
-                                                <div class="slide-08-line-card">
-                                                    <div class="line-card-head"><span>Epoch Accuracy</span><em>Trend</em></div>
-                                                    <svg viewBox="0 0 180 48" preserveAspectRatio="none">
-                                                        <polyline points="0,36 28,32 56,24 84,20 112,18 140,14 180,10"></polyline>
-                                                    </svg>
+                                                <div class="exp-charts">
+                                                    <div class="exp-chart-box">
+                                                        <div class="chart-top"><span>Train Loss</span><strong>0.124</strong></div>
+                                                        <svg viewBox="0 0 100 30" preserveAspectRatio="none">
+                                                            <polyline points="0,28 20,20 40,15 60,10 80,8 100,5" stroke="#3B82F6" stroke-width="2" fill="none"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="exp-chart-box">
+                                                        <div class="chart-top"><span>Learning Rate</span><strong>2e-5</strong></div>
+                                                        <svg viewBox="0 0 100 30" preserveAspectRatio="none">
+                                                            <polyline points="0,5 20,5 20,10 40,10 40,15 60,15 60,20 80,20 80,25 100,25" stroke="#10B981" stroke-width="2" fill="none"/>
+                                                        </svg>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <figcaption>实验数据</figcaption>
                                 </figure>
+
+                                <!-- 5. 运行 Metrics 监控 -->
                                 <figure class="slide-08-gallery-item">
                                     <div class="slide-08-image-slot sim-metrics">
                                         <div class="slide-08-sim-window">
                                             <div class="slide-08-sim-head">
                                                 <div class="slide-08-sim-dots"><span></span><span></span><span></span></div>
+                                                <div class="slide-08-sim-title">Cluster Metrics (Grafana)</div>
                                             </div>
-                                            <div class="slide-08-metric-series">
-                                                <div class="slide-08-line-card compact">
-                                                    <div class="line-card-head"><span>GPU 78%</span><em>Utilization</em></div>
-                                                    <svg viewBox="0 0 180 42" preserveAspectRatio="none">
-                                                        <polyline points="0,30 28,22 56,18 84,15 112,14 140,12 180,10"></polyline>
-                                                    </svg>
+                                            <div class="slide-08-metrics-ui">
+                                                <div class="metric-card">
+                                                    <div class="mc-head"><span>GPU Utilization</span><strong>78%</strong></div>
+                                                    <div class="mc-graph"><div class="mc-fill green" style="width: 78%"></div></div>
                                                 </div>
-                                                <div class="slide-08-line-card compact">
-                                                    <div class="line-card-head"><span>CPU 46%</span><em>Load</em></div>
-                                                    <svg viewBox="0 0 180 42" preserveAspectRatio="none">
-                                                        <polyline points="0,24 28,28 56,22 84,26 112,18 140,21 180,16"></polyline>
-                                                    </svg>
+                                                <div class="metric-card">
+                                                    <div class="mc-head"><span>CPU Load</span><strong>46%</strong></div>
+                                                    <div class="mc-graph"><div class="mc-fill blue" style="width: 46%"></div></div>
                                                 </div>
-                                                <div class="slide-08-line-card compact">
-                                                    <div class="line-card-head"><span>Memory 31GB</span><em>Usage</em></div>
-                                                    <svg viewBox="0 0 180 42" preserveAspectRatio="none">
-                                                        <polyline points="0,34 28,30 56,28 84,25 112,23 140,20 180,18"></polyline>
-                                                    </svg>
+                                                <div class="metric-card">
+                                                    <div class="mc-head"><span>Memory Usage</span><strong>128GB / 256GB</strong></div>
+                                                    <div class="mc-graph"><div class="mc-fill yellow" style="width: 50%"></div></div>
                                                 </div>
-                                                <div class="slide-08-line-card compact">
-                                                    <div class="line-card-head"><span>Temp 71°C</span><em>Thermal</em></div>
-                                                    <svg viewBox="0 0 180 42" preserveAspectRatio="none">
-                                                        <polyline points="0,26 28,24 56,20 84,18 112,19 140,16 180,14"></polyline>
-                                                    </svg>
+                                                <div class="metric-card">
+                                                    <div class="mc-head"><span>GPU Temperature</span><strong>71°C</strong></div>
+                                                    <div class="mc-graph"><div class="mc-fill red" style="width: 71%"></div></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <figcaption>运行 Metrics 监控</figcaption>
                                 </figure>
+
+                                <!-- 6. 持久化数据管理 -->
                                 <figure class="slide-08-gallery-item">
                                     <div class="slide-08-image-slot sim-storage">
                                         <div class="slide-08-sim-window">
                                             <div class="slide-08-sim-head">
                                                 <div class="slide-08-sim-dots"><span></span><span></span><span></span></div>
+                                                <div class="slide-08-sim-title">Filebrowser - /mnt/nas</div>
                                             </div>
-                                            <div class="slide-08-filebrowser">
-                                                <div class="slide-08-filebrowser-sidebar">
-                                                    <span class="active">datasets</span>
-                                                    <span>models</span>
-                                                    <span>checkpoints</span>
-                                                    <span>shared</span>
+                                            <div class="slide-08-storage-ui">
+                                                <div class="storage-sidebar">
+                                                    <span class="active">/ datasets</span>
+                                                    <span>/ models</span>
+                                                    <span>/ checkpoints</span>
                                                 </div>
-                                                <div class="slide-08-filebrowser-main">
-                                                    <div class="slide-08-filebrowser-bar">
-                                                        <span>/workspace/storage</span>
-                                                        <span>filebrowser</span>
+                                                <div class="storage-main">
+                                                    <div class="storage-path">📁 /mnt/nas/datasets/corpus-v2/</div>
+                                                    <div class="storage-list">
+                                                        <div class="s-item"><span>📄 train_data.jsonl</span><em>1.2 TB</em></div>
+                                                        <div class="s-item"><span>📄 valid_data.jsonl</span><em>45 GB</em></div>
+                                                        <div class="s-item"><span>📁 processed_embeds</span><em>--</em></div>
                                                     </div>
-                                                    <div class="slide-08-filebrowser-rows">
-                                                        <span><b>dataset-v3/</b><em>folder</em></span>
-                                                        <span><b>DeepSeek-V3.2/</b><em>folder</em></span>
-                                                        <span><b>ckpt-0421.safetensors</b><em>12.4 GB</em></span>
-                                                        <span><b>logs/</b><em>folder</em></span>
+                                                    <div class="storage-quota">
+                                                        <div class="sq-text">Storage Quota: 8.4 TB / 10 TB</div>
+                                                        <div class="sq-bar"><i style="width: 84%"></i></div>
                                                     </div>
                                                 </div>
                                             </div>
