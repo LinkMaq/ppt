@@ -270,37 +270,14 @@
 
 .slide-15-sim-toolbar {
     padding: 16px 18px;
-    display: flex;
-    justify-content: space-between;
-    gap: 18px;
-    align-items: center;
+    display: block;
 }
 
 .slide-15-sim-title h4 {
-    margin: 8px 0 0;
+    margin: 0;
     font-size: 28px;
     line-height: 1.2;
     color: #0F172A;
-}
-
-.slide-15-sim-pills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-.slide-15-sim-pills span {
-    min-height: 34px;
-    padding: 0 12px;
-    display: inline-flex;
-    align-items: center;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.96);
-    border: 1px solid rgba(30, 96, 248, 0.08);
-    font-size: 12px;
-    font-weight: 800;
-    color: #1E3A8A;
 }
 
 .slide-15-sim-table-card {
