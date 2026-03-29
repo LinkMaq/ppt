@@ -310,16 +310,16 @@
 .slide-15-sim-table-head,
 .slide-15-sim-row {
     display: grid;
-    grid-template-columns: 2.2fr 0.8fr 0.9fr 0.8fr 0.8fr 1.6fr 1.5fr 1.1fr;
-    gap: 10px;
+    grid-template-columns: 2.05fr 0.72fr 0.84fr 0.76fr 0.76fr 0.72fr 1.45fr 1.38fr 1.02fr;
+    gap: 8px;
     align-items: center;
 }
 
 .slide-15-sim-table-head {
-    padding: 14px 16px;
+    padding: 12px 14px;
     border-radius: 20px;
     background: linear-gradient(180deg, #F3F6FB 0%, #EDF2F8 100%);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 800;
     color: #64748B;
 }
@@ -329,8 +329,8 @@
 }
 
 .slide-15-sim-row {
-    padding: 14px 16px;
-    min-height: 72px;
+    padding: 11px 14px;
+    min-height: 62px;
     border-bottom: 1px dashed rgba(148, 163, 184, 0.22);
 }
 
@@ -344,34 +344,51 @@
 }
 
 .sim-host-cell strong {
-    font-size: 16px;
+    font-size: 15px;
     color: #1E293B;
 }
 
 .sim-host-cell span {
-    font-size: 12px;
+    font-size: 11px;
     color: #64748B;
 }
 
 .sim-green {
-    font-size: 15px;
+    font-size: 14px;
     color: #22C55E;
 }
 
 .sim-blue {
-    font-size: 15px;
+    font-size: 14px;
     color: #0EA5E9;
+}
+
+.sim-load {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.sim-load.hot {
+    color: #22C55E;
+}
+
+.sim-load.warm {
+    color: #16A34A;
+}
+
+.sim-load.cool {
+    color: #65A30D;
 }
 
 .sim-pill,
 .sim-bandwidth {
-    min-height: 40px;
-    padding: 0 14px;
+    min-height: 34px;
+    padding: 0 10px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
 }
 
@@ -397,7 +414,7 @@
 
 .sim-meter {
     position: relative;
-    height: 40px;
+    height: 34px;
     border-radius: 12px;
     background: linear-gradient(180deg, rgba(242, 244, 247, 0.96), rgba(232, 236, 242, 0.96));
     overflow: hidden;
@@ -419,7 +436,7 @@
     align-items: center;
     justify-content: center;
     font-style: normal;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 800;
     color: #1E293B;
 }
