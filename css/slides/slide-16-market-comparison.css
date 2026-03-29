@@ -454,8 +454,9 @@
     flex: 1;
     min-height: 0;
     margin-top: 2px;
-    padding: 6px 2px 4px;
+    padding: 6px 4px 6px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
@@ -467,7 +468,7 @@
 .slide-16-radar-stage {
     width: 100%;
     height: 100%;
-    min-height: 220px;
+    min-height: 228px;
 }
 
 .slide-16-radar-stage svg {
@@ -487,22 +488,103 @@
     stroke-width: 1.2;
 }
 
-.radar-area {
-    fill: url(#slide-16-radar-fill);
-    stroke: url(#slide-16-radar-stroke);
-    stroke-width: 3;
+.radar-series .radar-area {
+    stroke-width: 2.4;
 }
 
-.radar-dots circle {
-    fill: #1E60F8;
+.radar-series .radar-dots circle {
     stroke: #FFFFFF;
     stroke-width: 2;
 }
 
+.radar-series-ali .radar-area {
+    fill: rgba(245, 158, 11, 0.18);
+    stroke: rgba(217, 119, 6, 0.9);
+}
+
+.radar-series-ali .radar-dots circle {
+    fill: #F59E0B;
+}
+
+.radar-series-huawei .radar-area {
+    fill: rgba(239, 68, 68, 0.13);
+    stroke: rgba(220, 38, 38, 0.78);
+}
+
+.radar-series-huawei .radar-dots circle {
+    fill: #EF4444;
+}
+
+.radar-series-hf .radar-area {
+    fill: rgba(139, 92, 246, 0.14);
+    stroke: rgba(124, 58, 237, 0.76);
+}
+
+.radar-series-hf .radar-dots circle {
+    fill: #8B5CF6;
+}
+
+.radar-series-rune .radar-area {
+    fill: rgba(30, 96, 248, 0.18);
+    stroke: url(#slide-16-rune-stroke);
+    stroke-width: 3;
+}
+
+.radar-series-rune .radar-dots circle {
+    fill: #1E60F8;
+}
+
 .radar-labels text {
     fill: #334155;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
+}
+
+.slide-16-radar-legend {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 10px;
+    margin-top: 2px;
+}
+
+.legend-item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding-left: 14px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.legend-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    transform: translateY(-50%);
+}
+
+.legend-ali::before {
+    background: #F59E0B;
+}
+
+.legend-huawei::before {
+    background: #EF4444;
+}
+
+.legend-hf::before {
+    background: #8B5CF6;
+}
+
+.legend-rune::before {
+    background: linear-gradient(90deg, #1E60F8, #10B981);
 }
 
 .slide-16-insight-grid {
