@@ -257,22 +257,8 @@
 .slide-08-sim-head {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 8px;
-}
-
-.slide-08-sim-tag {
-    display: inline-flex;
-    align-items: center;
-    min-height: 24px;
-    padding: 0 9px;
-    border-radius: 999px;
-    background: rgba(30, 96, 248, 0.08);
-    color: #1D4ED8;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
 }
 
 .slide-08-sim-dots {
