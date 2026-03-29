@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalSlides = slides.length;
     let currentSlideIndex = 0;
     let lastWheelNavigationAt = 0;
+    let isSyncingHash = false;
 
     // UI 元素
     const btnPrev = document.getElementById('btn-prev');
@@ -51,8 +52,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = slides[index].getAttribute('data-title');
         slideTitle.textContent = title ? title : `Slide ${index + 1}`;
 
-        // 更新 URL Hash
-        window.location.hash = `slide-${index + 1}`;
+        // 使用 History API 同步路由，避免浏览器按锚点滚动到对应 section
+        const targetHash = `#slide-${index + 1}`;
+        if (window.location.hash !== targetHash) {
+            isSyncingHash = true;
+            window.history.replaceState(null, '', targetHash);
+            window.setTimeout(() => {
+                isSyncingHash = false;
+            }, 0);
+        }
+
+        // 强制保持演示视口停留在页面顶部，防止刷新或 hash 跳转导致页面被滚动到 DOM 深处
+        window.scrollTo(0, 0);
     }
 
     /**
@@ -138,6 +149,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 初始路由检查 (允许直接打开 #slide-N 跳转)
     function initFromHash() {
+        window.scrollTo(0, 0);
+
         if (window.location.hash) {
             const match = window.location.hash.match(/slide-(\d+)/);
             if (match && match[1]) {
@@ -152,5 +165,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initFromHash();
-    window.addEventListener('hashchange', initFromHash);
+    window.addEventListener('hashchange', () => {
+        if (isSyncingHash) {
+            window.scrollTo(0, 0);
+            return;
+        }
+
+        initFromHash();
+    });
 });

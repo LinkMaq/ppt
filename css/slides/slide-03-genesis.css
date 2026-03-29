@@ -11,7 +11,7 @@
         linear-gradient(180deg, #FFFFFF 0%, #F7FAFF 58%, #F3F7FE 100%);
     color: var(--color-text-main);
     padding: 80px 100px 56px;
-    position: relative;
+    position: absolute;
     overflow: hidden;
     display: flex;
     flex-direction: column;

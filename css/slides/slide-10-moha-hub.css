@@ -4,7 +4,7 @@
    ========================================= */
 
 #slide-10 {
-    position: relative;
+    position: absolute;
     overflow: hidden;
     padding: 56px 78px 32px;
     color: var(--color-text-main);

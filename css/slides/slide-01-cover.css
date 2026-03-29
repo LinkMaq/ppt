@@ -7,7 +7,7 @@
 #slide-1 {
     background-color: var(--color-bg-white);
     color: var(--color-text-main);
-    position: relative;
+    position: absolute;
     overflow: hidden;
 }
 
