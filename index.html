@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/slides/slide-09-gateway.css?v=20260328-1">
     <link rel="stylesheet" href="css/slides/slide-10-moha-hub.css?v=20260329-1">
     <link rel="stylesheet" href="css/slides/slide-11-app-market.css?v=20260329-1">
+    <link rel="stylesheet" href="css/slides/slide-12-chatapp.css?v=20260329-1">
 </head>
 <body>
     <!-- 整体演示容器 -->
@@ -1682,6 +1683,238 @@
 
                     <div class="slide-11-footer">
                         Rune 智算平台同时满足 AI 与容器两类场景需求，用更丰富的模板和更完整的生命周期管理能力，加速业务创新而不牺牲治理能力
+                    </div>
+                </section>
+
+                <!-- Slide 12: ChatApp -->
+                <section class="slide" id="slide-12" data-title="ChatApp 对话体验">
+                    <div class="slide-12-bg-grid"></div>
+                    <div class="slide-12-bg-glow"></div>
+                    <div class="slide-12-bg-orbit"></div>
+
+                    <div class="slide-12-header">
+                        <h2 class="slide-12-title">ChatApp：沉浸式多模型对话体验</h2>
+                        <p class="slide-12-subtitle">把模型试用、参数调试、推理展示与 API 集成收敛到同一个 LLM Playground 中，让开发者和业务团队在一页内完成评估、对比和接入判断。</p>
+                    </div>
+
+                    <div class="slide-12-summary-strip">
+                        <div class="slide-12-summary-item">基于模型列表切换</div>
+                        <div class="slide-12-summary-item">Temperature / Top P 调试</div>
+                        <div class="slide-12-summary-item">Reasoning 可视化</div>
+                        <div class="slide-12-summary-item">联网与多模态输入</div>
+                        <div class="slide-12-summary-item">网关治理与 API 集成</div>
+                    </div>
+
+                    <div class="slide-12-body">
+                        <div class="slide-12-chat-panel">
+                            <div class="slide-12-shell">
+                                <div class="slide-12-shell-header">
+                                    <div class="slide-12-shell-dots">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+
+                                <div class="slide-12-shell-body">
+                                    <aside class="slide-12-model-sidebar">
+                                        <div class="slide-12-model-search">Search models, routes, tags...</div>
+
+                                        <div class="slide-12-model-list">
+                                            <article class="slide-12-model-item active">
+                                                <div class="slide-12-model-topline">
+                                                    <span class="model-state online">Online</span>
+                                                    <span class="model-score">91</span>
+                                                </div>
+                                                <h3>DeepSeek R1 671B</h3>
+                                                <p>Reasoning 强，适合方案生成与复杂业务分析。</p>
+                                                <div class="slide-12-model-meta">
+                                                    <span>128K</span>
+                                                    <span>Tenant</span>
+                                                    <span>Reasoning</span>
+                                                </div>
+                                            </article>
+
+                                            <article class="slide-12-model-item">
+                                                <div class="slide-12-model-topline">
+                                                    <span class="model-state standby">Standby</span>
+                                                    <span class="model-score">88</span>
+                                                </div>
+                                                <h3>Qwen Max 128K</h3>
+                                                <p>回答稳健，适合正式交付前的口径校准。</p>
+                                                <div class="slide-12-model-meta">
+                                                    <span>128K</span>
+                                                    <span>Private</span>
+                                                    <span>Stable</span>
+                                                </div>
+                                            </article>
+
+                                            <article class="slide-12-model-item">
+                                                <div class="slide-12-model-topline">
+                                                    <span class="model-state online">Online</span>
+                                                    <span class="model-score">90</span>
+                                                </div>
+                                                <h3>Gemini 2.5 Pro</h3>
+                                                <p>长上下文与复杂写作表现优先，适合调研型问答。</p>
+                                                <div class="slide-12-model-meta">
+                                                    <span>1M</span>
+                                                    <span>Public</span>
+                                                    <span>Search</span>
+                                                </div>
+                                            </article>
+
+                                        </div>
+
+                                    </aside>
+
+                                    <div class="slide-12-dialog-stage">
+                                        <div class="slide-12-dialog-toolbar">
+                                            <div>
+                                                <span class="dialog-mode">Selected Model</span>
+                                                <h3>DeepSeek R1 671B</h3>
+                                            </div>
+                                            <div class="slide-12-dialog-badges">
+                                                <span>Reasoning On</span>
+                                                <span>联网关闭</span>
+                                                <span>租户级路由</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="slide-12-conversation-thread">
+                                            <article class="slide-12-message user-message">
+                                                <span class="message-role">User</span>
+                                                <p>请基于企业知识库，为一家制造业客户生成“设备巡检 Copilot”落地方案，要求包含部署架构、数据安全策略和 ROI 预估。</p>
+                                            </article>
+
+                                            <article class="slide-12-message assistant-message">
+                                                <div class="slide-12-message-topline">
+                                                    <span class="message-role">Assistant</span>
+                                                    <span class="message-latency">首 Token 1.2s</span>
+                                                </div>
+                                                <div class="slide-12-thinking-chip">Reasoning: 已拆解业务目标、知识来源、合规边界与上线节奏</div>
+
+                                                <div class="slide-12-message-sections">
+                                                    <div class="slide-12-message-block">
+                                                        <h4>部署架构</h4>
+                                                        <p>先在 ChatApp 完成提示词和参数验证，再经 LLM Gateway 发布租户级 API，后接巡检应用与知识检索链路。</p>
+                                                    </div>
+                                                    <div class="slide-12-message-block">
+                                                        <h4>安全策略</h4>
+                                                        <p>采用工作空间隔离、审计日志、敏感词过滤与设备文档脱敏，保证生产资料不跨租户泄露。</p>
+                                                    </div>
+                                                    <div class="slide-12-message-block">
+                                                        <h4>上线建议</h4>
+                                                        <p>优先覆盖 SOP 检索、异常问答与报告草拟场景，再逐步推广到移动巡检与培训辅导。</p>
+                                                    </div>
+                                                </div>
+                                            </article>
+
+                                            <article class="slide-12-message trace-message">
+                                                <span class="message-role">Trace</span>
+                                                <div class="slide-12-trace-tags">
+                                                    <span>Gateway Route: chatapp-route</span>
+                                                    <span>Audit: Enabled</span>
+                                                    <span>Source: Manufacturing KB</span>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="slide-12-compose-bar">
+                                    <div class="slide-12-compose-tools">
+                                        <span>Image Input</span>
+                                        <span>Web Search</span>
+                                        <span>System Prompt</span>
+                                    </div>
+                                    <div class="slide-12-compose-input">输入问题、上传图片或切换系统提示词，直接在所选模型上发起对话。</div>
+                                    <button class="slide-12-run-button" type="button">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide-12-side-panel">
+                            <div class="slide-12-control-card">
+                                <div class="slide-12-card-head">
+                                    <span class="slide-12-card-kicker">Advanced Tuning</span>
+                                    <h3>参数调试与系统设定</h3>
+                                </div>
+
+                                <div class="slide-12-control-list">
+                                    <div class="slide-12-control-row">
+                                        <span>Temperature</span>
+                                        <div class="slide-12-control-track">
+                                            <i class="fill-temperature"></i>
+                                        </div>
+                                        <strong>0.7</strong>
+                                    </div>
+                                    <div class="slide-12-control-row">
+                                        <span>Top P</span>
+                                        <div class="slide-12-control-track">
+                                            <i class="fill-top-p"></i>
+                                        </div>
+                                        <strong>0.9</strong>
+                                    </div>
+                                    <div class="slide-12-control-row">
+                                        <span>Max Tokens</span>
+                                        <div class="slide-12-control-track">
+                                            <i class="fill-max-tokens"></i>
+                                        </div>
+                                        <strong>4096</strong>
+                                    </div>
+                                </div>
+
+                                <div class="slide-12-system-prompt">
+                                    <span class="system-prompt-label">System Prompt</span>
+                                    <p>你是企业 AI 方案架构师，请优先考虑私有化部署、权限隔离、审计合规与业务可复制性。</p>
+                                </div>
+                            </div>
+
+                            <div class="slide-12-feature-grid">
+                                <article class="slide-12-feature-card accent-blue">
+                                    <span class="feature-label">深度思考</span>
+                                    <p>支持展示 reasoning 过程与关键推断节点，辅助评估复杂任务的稳定性。</p>
+                                </article>
+                                <article class="slide-12-feature-card accent-purple">
+                                    <span class="feature-label">联网检索</span>
+                                    <p>可在同一对话内查看联网结果和引用来源，适合知识更新频繁的业务场景。</p>
+                                </article>
+                                <article class="slide-12-feature-card accent-green">
+                                    <span class="feature-label">企业治理</span>
+                                    <p>统一继承路由、内容审查、速率限制与审计日志，不绕开平台治理闭环。</p>
+                                </article>
+                                <article class="slide-12-feature-card accent-cyan">
+                                    <span class="feature-label">多模态输入</span>
+                                    <p>兼容文本与图像输入输出，为质检、巡检和文档解析场景保留扩展空间。</p>
+                                </article>
+                            </div>
+
+                            <div class="slide-12-api-card">
+                                <div class="slide-12-card-head">
+                                    <span class="slide-12-card-kicker api-kicker">API Access</span>
+                                    <h3>从 Playground 到业务接入</h3>
+                                </div>
+
+                                <div class="slide-12-api-list">
+                                    <div class="slide-12-api-item">
+                                        <span>Endpoint</span>
+                                        <code>/openai/v1/chat/completions</code>
+                                    </div>
+                                    <div class="slide-12-api-item">
+                                        <span>Routing</span>
+                                        <code>chatapp-route / deepseek-r1 / qwen-max</code>
+                                    </div>
+                                    <div class="slide-12-api-item">
+                                        <span>Security</span>
+                                        <code>API Key / 审计 / 内容过滤</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide-12-footer">
+                        ChatApp 让模型试用、调优、对比和接入在同一工作台内闭环完成，把“好不好用”的评估更快转化为“能不能上线”的决策
                     </div>
                 </section>
 
