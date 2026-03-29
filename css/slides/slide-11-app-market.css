@@ -412,30 +412,6 @@
     color: #475569;
 }
 
-.slide-11-template-band {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 14px;
-}
-
-.slide-11-template-band span {
-    min-height: 34px;
-    padding: 0 12px;
-    display: inline-flex;
-    align-items: center;
-    border-radius: 999px;
-    background: rgba(15, 23, 42, 0.04);
-    font-size: 12px;
-    font-weight: 700;
-    color: #475569;
-}
-
-.slide-11-template-band span:first-child {
-    color: #0F172A;
-    background: rgba(15, 23, 42, 0.08);
-}
-
 .slide-11-ops-panel {
     display: flex;
     flex-direction: column;
