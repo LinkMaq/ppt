@@ -436,8 +436,7 @@
     margin-bottom: 14px;
 }
 
-.slide-11-card-kicker,
-.slide-11-diff-kicker {
+.slide-11-card-kicker {
     display: inline-flex;
     align-items: center;
     min-height: 30px;
@@ -554,7 +553,6 @@
     pointer-events: none;
 }
 
-.slide-11-diff-kicker,
 .slide-11-diff-card h3,
 .slide-11-diff-card p {
     position: relative;
