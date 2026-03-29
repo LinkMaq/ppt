@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="css/slides/slide-11-app-market.css?v=20260329-1">
     <link rel="stylesheet" href="css/slides/slide-12-chatapp.css?v=20260329-1">
     <link rel="stylesheet" href="css/slides/slide-13-boss.css?v=20260329-1">
+    <link rel="stylesheet" href="css/slides/slide-15-observability.css?v=20260329-1">
 </head>
 <body>
     <!-- 整体演示容器 -->
@@ -2037,6 +2038,569 @@
 
                     <div class="slide-13-footer">
                         BOSS 用一个全局控制面把集群、组织、资源、模板和平台设置串成企业 AI 的运营主脑，让复杂平台的治理动作持续可见、可控、可审计
+                    </div>
+                </section>
+
+
+                <!-- Slide 15: Full-Stack Observability -->
+                <section class="slide" id="slide-15" data-title="全景可观测性与动态监控">
+                    <div class="slide-15-bg-grid"></div>
+                    <div class="slide-15-bg-glow"></div>
+                    <div class="slide-15-bg-pulse"></div>
+
+                    <div class="slide-15-header">
+                        <h2 class="slide-15-title">全景可观测性与动态监控</h2>
+                        <p class="slide-15-subtitle">把节点健康、工作负载、资源消耗、API 调用链、实例生命周期与配置变更收敛到同一张运营画布中，让平台团队从“事后排查”切换到“实时感知与主动处置”。</p>
+                    </div>
+
+                    <div class="slide-15-summary-strip">
+                        <div class="slide-15-summary-item">自定义监控大盘统一聚合</div>
+                        <div class="slide-15-summary-item">CPU / Memory / GPU 双视角分析</div>
+                        <div class="slide-15-summary-item">API 审计与实例追踪同页联动</div>
+                        <div class="slide-15-summary-item">配置变更过程可回放可追责</div>
+                        <div class="slide-15-summary-item">告警分级与定位链路收口</div>
+                    </div>
+
+                    <div class="slide-15-body">
+                        <aside class="slide-15-rail slide-15-alert-rail">
+                            <div class="slide-15-rail-head">
+                                <span class="rail-kicker">Alert Matrix</span>
+                                <h3>异常先被看见，再被定位</h3>
+                                <p>把平台最容易造成业务波动的告警集中到左侧，支持按严重级别和责任域快速收敛问题面。</p>
+                            </div>
+
+                            <div class="slide-15-alert-list">
+                                <article class="slide-15-alert-card severity-critical">
+                                    <div class="slide-15-alert-topline">
+                                        <span class="severity-label">Critical</span>
+                                        <span class="severity-time">02 min ago</span>
+                                    </div>
+                                    <h4>GPU 利用率突降与作业排队堆积</h4>
+                                    <p>East Cluster 的训练队列等待时长超过阈值，GPU 实际使用率与分配率出现明显背离。</p>
+                                    <div class="slide-15-alert-tags">
+                                        <span>Scheduler</span>
+                                        <span>GPU Pool</span>
+                                        <span>P95 Queue</span>
+                                    </div>
+                                </article>
+
+                                <article class="slide-15-alert-card severity-warning">
+                                    <div class="slide-15-alert-topline">
+                                        <span class="severity-label">Warning</span>
+                                        <span class="severity-time">11 min ago</span>
+                                    </div>
+                                    <h4>API 路由回退比例短时抬升</h4>
+                                    <p>模型网关检测到主路由响应抖动，部分请求自动回退到备用模型供应商。</p>
+                                    <div class="slide-15-alert-tags">
+                                        <span>Gateway</span>
+                                        <span>Fallback</span>
+                                        <span>Token Cost</span>
+                                    </div>
+                                </article>
+
+                                <article class="slide-15-alert-card severity-info">
+                                    <div class="slide-15-alert-topline">
+                                        <span class="severity-label">Audit</span>
+                                        <span class="severity-time">27 min ago</span>
+                                    </div>
+                                    <h4>推理服务配置发生灰度变更</h4>
+                                    <p>实例副本、镜像版本与限流策略均被完整记录，可追溯到工单与操作人。</p>
+                                    <div class="slide-15-alert-tags">
+                                        <span>Release</span>
+                                        <span>Trace ID</span>
+                                        <span>Policy Diff</span>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <div class="slide-15-health-card">
+                                <div class="slide-15-health-head">
+                                    <span class="rail-kicker">Service Health</span>
+                                    <strong>核心平面状态</strong>
+                                </div>
+                                <div class="slide-15-health-list">
+                                    <div class="slide-15-health-item healthy">
+                                        <span>Inference Service</span>
+                                        <strong>98.7%</strong>
+                                    </div>
+                                    <div class="slide-15-health-item healthy">
+                                        <span>Model Gateway</span>
+                                        <strong>99.2%</strong>
+                                    </div>
+                                    <div class="slide-15-health-item degraded">
+                                        <span>Experiment Tracking</span>
+                                        <strong>96.4%</strong>
+                                    </div>
+                                    <div class="slide-15-health-item healthy">
+                                        <span>Audit Pipeline</span>
+                                        <strong>100%</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <div class="slide-15-stage">
+                            <div class="slide-15-stage-shell">
+                                <div class="slide-15-stage-top">
+                                    <div class="slide-15-stage-copy">
+                                        <span class="stage-kicker">Panoramic Ops Dashboard</span>
+                                        <h3>一张监控墙同时回答三件事：哪里有波动、资源是否浪费、变更是谁触发的</h3>
+                                        <p>中间主舞台不模拟单一产品截图，而是把企业运营团队最关心的三条线索拼成一个联动视图：集群状态、资源曲线和行为轨迹。</p>
+                                    </div>
+
+                                    <div class="slide-15-kpi-strip">
+                                        <div class="slide-15-kpi-card">
+                                            <strong>12</strong>
+                                            <span>托管集群</span>
+                                        </div>
+                                        <div class="slide-15-kpi-card">
+                                            <strong>168</strong>
+                                            <span>活动工作负载</span>
+                                        </div>
+                                        <div class="slide-15-kpi-card">
+                                            <strong>2.3M</strong>
+                                            <span>日均调用链</span>
+                                        </div>
+                                        <div class="slide-15-kpi-card">
+                                            <strong>428</strong>
+                                            <span>审计事件 / 小时</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="slide-15-panorama">
+                                    <section class="slide-15-panel slide-15-topology-panel">
+                                        <div class="slide-15-panel-head">
+                                            <div>
+                                                <span class="panel-kicker">Monitoring Panel</span>
+                                                <h4>节点与工作负载全景</h4>
+                                            </div>
+                                            <span class="panel-chip">Realtime Sync</span>
+                                        </div>
+
+                                        <div class="slide-15-cluster-row">
+                                            <article class="slide-15-cluster-card accent-blue">
+                                                <span class="cluster-label">Cluster East</span>
+                                                <strong>42 Workloads</strong>
+                                                <p>训练集群，关注 GPU 分配率、作业等待和副本稳定性。</p>
+                                            </article>
+                                            <article class="slide-15-cluster-card accent-green">
+                                                <span class="cluster-label">Cluster South</span>
+                                                <strong>58 Workloads</strong>
+                                                <p>推理集群，承担多租户在线服务与弹性扩缩容压力。</p>
+                                            </article>
+                                            <article class="slide-15-cluster-card accent-purple">
+                                                <span class="cluster-label">Edge Region</span>
+                                                <strong>68 Endpoints</strong>
+                                                <p>边缘推理区域，主要监控链路延迟、网关路由与镜像版本。</p>
+                                            </article>
+                                        </div>
+
+                                        <div class="slide-15-signal-river">
+                                            <div class="slide-15-signal-grid"></div>
+                                            <svg viewBox="0 0 760 240" aria-hidden="true">
+                                                <defs>
+                                                    <linearGradient id="slide-15-area-blue" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                        <stop offset="0%" stop-color="rgba(30, 96, 248, 0.28)" />
+                                                        <stop offset="100%" stop-color="rgba(30, 96, 248, 0)" />
+                                                    </linearGradient>
+                                                    <linearGradient id="slide-15-line-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                        <stop offset="0%" stop-color="#60A5FA" />
+                                                        <stop offset="100%" stop-color="#1E60F8" />
+                                                    </linearGradient>
+                                                    <linearGradient id="slide-15-line-green" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                        <stop offset="0%" stop-color="#6EE7B7" />
+                                                        <stop offset="100%" stop-color="#10B981" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <path d="M28 188 C96 154, 156 164, 212 122 S348 74, 420 102 S558 186, 732 96 L732 220 L28 220 Z" fill="url(#slide-15-area-blue)"></path>
+                                                <path class="slide-15-chart-line" d="M28 188 C96 154, 156 164, 212 122 S348 74, 420 102 S558 186, 732 96" stroke="url(#slide-15-line-blue)" stroke-width="6" fill="none" stroke-linecap="round"></path>
+                                                <path class="slide-15-chart-line delay" d="M28 170 C102 154, 158 138, 216 148 S348 166, 426 132 S572 106, 732 142" stroke="url(#slide-15-line-green)" stroke-width="5" fill="none" stroke-linecap="round"></path>
+                                                <circle cx="212" cy="122" r="8" fill="#1E60F8"></circle>
+                                                <circle cx="420" cy="102" r="8" fill="#10B981"></circle>
+                                                <circle cx="732" cy="96" r="8" fill="#1E60F8"></circle>
+                                            </svg>
+                                            <div class="slide-15-river-legend">
+                                                <span><i class="legend-dot blue"></i> API Calls</span>
+                                                <span><i class="legend-dot green"></i> Healthy Pods</span>
+                                                <span><i class="legend-dot cyan"></i> Alert Correlation</span>
+                                            </div>
+                                            <div class="slide-15-river-callout">
+                                                <strong>Peak Window</strong>
+                                                <p>高峰时段调用量抬升 34%，网关自动回退策略在 90 秒内完成稳定收敛。</p>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section class="slide-15-panel slide-15-resource-panel">
+                                        <div class="slide-15-panel-head">
+                                            <div>
+                                                <span class="panel-kicker">Resource Analysis</span>
+                                                <h4>分配率与使用率并行观察</h4>
+                                            </div>
+                                            <span class="panel-chip">Allocation vs Usage</span>
+                                        </div>
+
+                                        <div class="slide-15-usage-list">
+                                            <div class="slide-15-usage-row">
+                                                <div class="slide-15-usage-meta">
+                                                    <span>GPU Pool</span>
+                                                    <strong>84% / 67%</strong>
+                                                </div>
+                                                <div class="slide-15-usage-track allocated"><span style="width: 84%"></span></div>
+                                                <div class="slide-15-usage-track actual"><span style="width: 67%"></span></div>
+                                            </div>
+                                            <div class="slide-15-usage-row">
+                                                <div class="slide-15-usage-meta">
+                                                    <span>CPU</span>
+                                                    <strong>72% / 58%</strong>
+                                                </div>
+                                                <div class="slide-15-usage-track allocated"><span style="width: 72%"></span></div>
+                                                <div class="slide-15-usage-track actual"><span style="width: 58%"></span></div>
+                                            </div>
+                                            <div class="slide-15-usage-row">
+                                                <div class="slide-15-usage-meta">
+                                                    <span>Memory</span>
+                                                    <strong>76% / 63%</strong>
+                                                </div>
+                                                <div class="slide-15-usage-track allocated"><span style="width: 76%"></span></div>
+                                                <div class="slide-15-usage-track actual"><span style="width: 63%"></span></div>
+                                            </div>
+                                            <div class="slide-15-usage-row">
+                                                <div class="slide-15-usage-meta">
+                                                    <span>Storage I/O</span>
+                                                    <strong>61% / 49%</strong>
+                                                </div>
+                                                <div class="slide-15-usage-track allocated"><span style="width: 61%"></span></div>
+                                                <div class="slide-15-usage-track actual"><span style="width: 49%"></span></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="slide-15-latency-card">
+                                            <div class="latency-pill">
+                                                <span>P95 Route Latency</span>
+                                                <strong>182 ms</strong>
+                                            </div>
+                                            <div class="latency-pill">
+                                                <span>Failed Requests</span>
+                                                <strong>0.14%</strong>
+                                            </div>
+                                            <div class="latency-pill">
+                                                <span>Config Drift</span>
+                                                <strong>2 changes</strong>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+
+                                <div class="slide-15-trace-grid">
+                                    <article class="slide-15-trace-card accent-blue">
+                                        <span class="trace-kicker">API Audit</span>
+                                        <h4>每一次请求都可定位到租户、模型、Key 与审查策略</h4>
+                                        <p>调用链路与内容审查结果自动落库，方便回看异常输出、计费争议与安全事件。</p>
+                                    </article>
+                                    <article class="slide-15-trace-card accent-green">
+                                        <span class="trace-kicker">Instance Lifecycle</span>
+                                        <h4>实例创建、扩缩容、重启、暂停与恢复都有完整时间线</h4>
+                                        <p>平台团队可以直接判断是资源不足、镜像变更还是策略触发导致服务状态波动。</p>
+                                    </article>
+                                    <article class="slide-15-trace-card accent-purple">
+                                        <span class="trace-kicker">Change Replay</span>
+                                        <h4>配置差异、版本变更与操作人责任链形成闭环追踪</h4>
+                                        <p>把发布动作、工单记录与告警事件对齐，避免“有问题但找不到变更源头”。</p>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                        <aside class="slide-15-rail slide-15-audit-rail">
+                            <div class="slide-15-rail-head">
+                                <span class="rail-kicker">Audit Timeline</span>
+                                <h3>从事件到责任归属都能回放</h3>
+                                <p>右侧时间线承接 API、实例和配置三类行为，帮助平台团队在一个窗口内完成追溯和复盘。</p>
+                            </div>
+
+                            <div class="slide-15-timeline">
+                                <article class="slide-15-timeline-item">
+                                    <span class="timeline-time">09:42</span>
+                                    <h4>gateway-route/fallback</h4>
+                                    <p>主路由超时，系统切换到备用供应商并保留关联 trace ID。</p>
+                                </article>
+                                <article class="slide-15-timeline-item">
+                                    <span class="timeline-time">09:45</span>
+                                    <h4>inference/redeploy</h4>
+                                    <p>工作空间 `fraud-detect` 触发新镜像灰度，副本从 6 扩到 8。</p>
+                                </article>
+                                <article class="slide-15-timeline-item">
+                                    <span class="timeline-time">09:47</span>
+                                    <h4>rbac/policy-change</h4>
+                                    <p>平台管理员调整 API Key 可见性策略，差异已同步到审计记录。</p>
+                                </article>
+                                <article class="slide-15-timeline-item">
+                                    <span class="timeline-time">09:53</span>
+                                    <h4>alert/recovered</h4>
+                                    <p>训练队列等待恢复到阈值范围内，告警自动关闭并生成复盘标记。</p>
+                                </article>
+                            </div>
+
+                            <div class="slide-15-compliance-card">
+                                <span class="rail-kicker">Audit Coverage</span>
+                                <strong>100% 关键动作留痕</strong>
+                                <p>API 调用、实例启停、配置变更、权限策略调整统一写入审计流，满足企业内部治理和外部合规检查。</p>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <div class="slide-15-footer">
+                        Rune 把集群指标、资源利用、调用链与审计事件压缩进同一张可观测画布，让平台运行状态从“看日志猜问题”变成“看全景即定位”
+                    </div>
+                </section>
+
+                <!-- Slide 16: Market Comparison -->
+                <section class="slide" id="slide-16" data-title="市场主流 AI 平台对比">
+                    <div class="slide-16-bg-grid"></div>
+                    <div class="slide-16-bg-glow"></div>
+                    <div class="slide-16-bg-sweep"></div>
+
+                    <div class="slide-16-header">
+                        <h2 class="slide-16-title">市场主流 AI 平台对比</h2>
+                        <p class="slide-16-subtitle">面对企业级 AI 建设，市场上的平台往往分别偏向公有云托管、单一芯片生态或开源协作社区。Rune AI 的重点不是做一项能力最强，而是把企业真正需要同时成立的几条关键链路统一收进一个可私有化、可治理、可扩展的平台中。</p>
+                    </div>
+
+                    <div class="slide-16-summary-strip">
+                        <div class="slide-16-summary-item">完全私有化部署</div>
+                        <div class="slide-16-summary-item">多芯片异构纳管</div>
+                        <div class="slide-16-summary-item">内置私有 Hub</div>
+                        <div class="slide-16-summary-item">网关治理深度集成</div>
+                        <div class="slide-16-summary-item">原生多租户与合规</div>
+                    </div>
+
+                    <div class="slide-16-body">
+                        <div class="slide-16-arena">
+                            <div class="slide-16-arena-head">
+                                <div class="slide-16-arena-copy">
+                                    <span class="slide-16-kicker">Competitive Landscape</span>
+                                    <h3>对比的核心不在“有没有”，而在这些能力是不是原生收敛在同一个企业级平台里</h3>
+                                </div>
+                                <div class="slide-16-arena-badge">
+                                    <span>Private-first</span>
+                                    <strong>Enterprise AI Stack</strong>
+                                </div>
+                            </div>
+
+                            <div class="slide-16-compare-grid">
+                                <div class="slide-16-grid-cell dimension-head">能力维度</div>
+                                <div class="slide-16-grid-cell vendor-head vendor-ali">
+                                    <span class="vendor-name">阿里云 PAI</span>
+                                    <span class="vendor-role">公有云 AI 套件</span>
+                                </div>
+                                <div class="slide-16-grid-cell vendor-head vendor-huawei">
+                                    <span class="vendor-name">华为 ModelArts</span>
+                                    <span class="vendor-role">昇腾生态导向</span>
+                                </div>
+                                <div class="slide-16-grid-cell vendor-head vendor-hf">
+                                    <span class="vendor-name">HuggingFace Enterprise</span>
+                                    <span class="vendor-role">开源协作社区</span>
+                                </div>
+                                <div class="slide-16-grid-cell vendor-head vendor-rune">
+                                    <span class="vendor-name">RUNE 晓石 AI</span>
+                                    <span class="vendor-role">企业私有化全栈平台</span>
+                                </div>
+
+                                <div class="slide-16-grid-cell dimension-cell">
+                                    <strong>私有化部署</strong>
+                                    <span>数据主权与环境控制</span>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-limited">受限</span>
+                                    <p>更偏公有云托管路径</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-supported">支持</span>
+                                    <p>可落本地，偏华为体系</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-limited">受限</span>
+                                    <p>企业版能力仍需受宿主环境约束</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell rune-cell">
+                                    <span class="status-pill status-rune">完全私有化</span>
+                                    <p>平台与数据都掌握在企业内部</p>
+                                </div>
+
+                                <div class="slide-16-grid-cell dimension-cell">
+                                    <strong>国产芯片支持</strong>
+                                    <span>异构算力兼容广度</span>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-partial">部分</span>
+                                    <p>以主流云侧资源为主</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-supported">华为自有</span>
+                                    <p>昇腾生态能力突出</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-none">不支持</span>
+                                    <p>不以国产异构资源池为目标</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell rune-cell">
+                                    <span class="status-pill status-rune">多芯片异构</span>
+                                    <p>昇腾、海光、NVIDIA 等统一纳管</p>
+                                </div>
+
+                                <div class="slide-16-grid-cell dimension-cell">
+                                    <strong>模型 Hub</strong>
+                                    <span>资产沉淀与协作方式</span>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-none">无</span>
+                                    <p>需借助外部资产体系补齐</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-none">无</span>
+                                    <p>不以内置私有资产社区为核心</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-supported">核心功能</span>
+                                    <p>擅长模型与数据协作沉淀</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell rune-cell">
+                                    <span class="status-pill status-rune">内置私有 Hub</span>
+                                    <p>Moha Hub 原生连通模型、数据、应用与技能</p>
+                                </div>
+
+                                <div class="slide-16-grid-cell dimension-cell">
+                                    <strong>AI 网关治理</strong>
+                                    <span>统一 API 与审计管控</span>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-partial">独立产品</span>
+                                    <p>需要额外拼接治理链路</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-partial">独立产品</span>
+                                    <p>网关能力通常不在主平台内闭环</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-none">无</span>
+                                    <p>缺统一企业网关控制面</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell rune-cell">
+                                    <span class="status-pill status-rune">深度集成</span>
+                                    <p>统一 API、限流、计费、审计和内容策略</p>
+                                </div>
+
+                                <div class="slide-16-grid-cell dimension-cell">
+                                    <strong>多租户体系</strong>
+                                    <span>组织隔离与权限边界</span>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-supported">支持</span>
+                                    <p>偏云账号与资源域隔离</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-supported">支持</span>
+                                    <p>企业治理能力较完整</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-partial">企业版</span>
+                                    <p>能力收束在协作产品边界内</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell rune-cell">
+                                    <span class="status-pill status-rune">原生多租户</span>
+                                    <p>租户、工作空间、配额与 RBAC 一体化</p>
+                                </div>
+
+                                <div class="slide-16-grid-cell dimension-cell">
+                                    <strong>内容安全合规</strong>
+                                    <span>审查、审计与策略控制</span>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-partial">基础</span>
+                                    <p>具备基础云侧审查能力</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-partial">基础</span>
+                                    <p>规则能力偏基础配置</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell">
+                                    <span class="status-pill status-none">无</span>
+                                    <p>更多依赖外部合规体系拼装</p>
+                                </div>
+                                <div class="slide-16-grid-cell compare-cell rune-cell">
+                                    <span class="status-pill status-rune">策略 + 词库</span>
+                                    <p>结合内容审查、审计追踪和企业策略编排</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <aside class="slide-16-decision-rail">
+                            <article class="slide-16-decision-card hero-card">
+                                <span class="decision-kicker">Decision Lens</span>
+                                <h3>Rune 的优势不是单点领先，而是减少企业把能力拼成平台的成本</h3>
+                                <p>当企业同时要求私有化、异构芯片、资产沉淀、API 治理与租户合规时，Rune 把最容易断开的几段链路收进同一控制面。</p>
+
+                                <div class="slide-16-score-list">
+                                    <div class="score-item">
+                                        <div class="score-meta">
+                                            <span>私有化掌控</span>
+                                            <strong>95</strong>
+                                        </div>
+                                        <div class="score-bar"><span style="width: 95%;"></span></div>
+                                    </div>
+                                    <div class="score-item">
+                                        <div class="score-meta">
+                                            <span>异构芯片兼容</span>
+                                            <strong>92</strong>
+                                        </div>
+                                        <div class="score-bar"><span style="width: 92%;"></span></div>
+                                    </div>
+                                    <div class="score-item">
+                                        <div class="score-meta">
+                                            <span>治理一体化</span>
+                                            <strong>94</strong>
+                                        </div>
+                                        <div class="score-bar"><span style="width: 94%;"></span></div>
+                                    </div>
+                                    <div class="score-item">
+                                        <div class="score-meta">
+                                            <span>协作资产沉淀</span>
+                                            <strong>90</strong>
+                                        </div>
+                                        <div class="score-bar"><span style="width: 90%;"></span></div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="slide-16-decision-card insight-card">
+                                <span class="insight-index">01</span>
+                                <h4>全链路一体化</h4>
+                                <p>从算力管理、模型资产、推理部署到 API 治理，一个平台覆盖企业 AI 落地全链路。</p>
+                            </article>
+
+                            <article class="slide-16-decision-card insight-card">
+                                <span class="insight-index">02</span>
+                                <h4>私有化优先</h4>
+                                <p>完全私有部署，让数据主权、系统权限和基础设施控制权回到企业自身手中。</p>
+                            </article>
+
+                            <article class="slide-16-decision-card insight-card">
+                                <span class="insight-index">03</span>
+                                <h4>国产芯片原生支持</h4>
+                                <p>把昇腾、海光等国产算力和主流 GPU 一起纳管，避免平台能力被单一硬件生态绑定。</p>
+                            </article>
+
+                            <article class="slide-16-decision-card insight-card">
+                                <span class="insight-index">04</span>
+                                <h4>开放生态协作</h4>
+                                <p>借鉴 HuggingFace 式资产协作体验，但把模型、数据、应用和技能沉淀在企业内部。</p>
+                            </article>
+                        </aside>
+                    </div>
+
+                    <div class="slide-16-footer">
+                        与其在多个平台之间拆分采购与集成，不如让私有化部署、异构算力、模型资产、应用交付和 API 治理在 Rune AI 中一次性收敛
                     </div>
                 </section>
 
