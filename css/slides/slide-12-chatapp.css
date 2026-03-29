@@ -615,14 +615,17 @@
 }
 
 .slide-12-side-panel {
-    display: grid;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-    align-content: start;
+    min-height: 0;
+    height: 100%;
+    align-self: stretch;
 }
 
 .slide-12-api-card {
     padding: 14px 14px 10px;
+    margin-top: auto;
 }
 
 .slide-12-card-head {
@@ -660,6 +663,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
     min-height: 0;
+    flex: 1;
     align-content: start;
     align-items: start;
     grid-auto-rows: max-content;
