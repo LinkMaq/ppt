@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="css/slides/slide-11-app-market.css?v=20260329-1">
     <link rel="stylesheet" href="css/slides/slide-12-chatapp.css?v=20260329-1">
     <link rel="stylesheet" href="css/slides/slide-13-boss.css?v=20260329-1">
-    <link rel="stylesheet" href="css/slides/slide-14-rbac.css?v=20260329-10">
+    <link rel="stylesheet" href="css/slides/slide-14-rbac.css?v=20260329-12">
     <link rel="stylesheet" href="css/slides/slide-15-observability.css?v=20260329-1">
     <link rel="stylesheet" href="css/slides/slide-16-market-comparison.css?v=20260329-1">
 </head>
@@ -2119,27 +2119,35 @@
 
                                     <div class="slide-14-channel-row">
                                         <div class="slide-14-channel-card">
-                                            <span class="channel-kicker">Quota Pool</span>
-                                            <p>每个租户拥有独立 CPU / GPU / Memory / Storage 上限</p>
+                                            <span class="channel-kicker">CPU 资源</span>
+                                            <p>为租户分配专属 CPU 算力，保障基础计算性能与隔离</p>
                                             <div class="slide-14-channel-tags">
-                                                <span>Hard Limit</span>
-                                                <span>申请审批</span>
+                                                <span>独享份额</span>
+                                                <span>配额管控</span>
                                             </div>
                                         </div>
                                         <div class="slide-14-channel-card">
-                                            <span class="channel-kicker">Namespace Fence</span>
-                                            <p>工作空间与运行实例隔离到独立命名空间和运行域</p>
+                                            <span class="channel-kicker">内存资源</span>
+                                            <p>独立的内存运行空间，确保租户计算任务与数据环境独立</p>
                                             <div class="slide-14-channel-tags">
-                                                <span>Workspace</span>
-                                                <span>Runtime Scope</span>
+                                                <span>容量隔离</span>
+                                                <span>性能保障</span>
                                             </div>
                                         </div>
                                         <div class="slide-14-channel-card">
-                                            <span class="channel-kicker">Data &amp; Secret Scope</span>
-                                            <p>存储路径、镜像可见性和 API Key 都围绕租户边界收口</p>
+                                            <span class="channel-kicker">GPU 资源</span>
+                                            <p>独立的计算加速卡分配，支持大规模模型训练与推理</p>
                                             <div class="slide-14-channel-tags">
-                                                <span>Storage Domain</span>
-                                                <span>Secret Policy</span>
+                                                <span>算力隔离</span>
+                                                <span>精细调度</span>
+                                            </div>
+                                        </div>
+                                        <div class="slide-14-channel-card">
+                                            <span class="channel-kicker">存储资源</span>
+                                            <p>隔离的高性能存储域，保障业务模型及数据的读写安全</p>
+                                            <div class="slide-14-channel-tags">
+                                                <span>独立空间</span>
+                                                <span>数据隔离</span>
                                             </div>
                                         </div>
                                     </div>
@@ -2213,83 +2221,6 @@
                     </div>
 
                     <div class="slide-15-body">
-                        <aside class="slide-15-rail slide-15-alert-rail">
-                            <div class="slide-15-rail-head">
-                                <span class="rail-kicker">Alert Matrix</span>
-                                <h3>异常先被看见，再被定位</h3>
-                                <p>把平台最容易造成业务波动的告警集中到左侧，支持按严重级别和责任域快速收敛问题面。</p>
-                            </div>
-
-                            <div class="slide-15-alert-list">
-                                <article class="slide-15-alert-card severity-critical">
-                                    <div class="slide-15-alert-topline">
-                                        <span class="severity-label">Critical</span>
-                                        <span class="severity-time">02 min ago</span>
-                                    </div>
-                                    <h4>GPU 利用率突降与作业排队堆积</h4>
-                                    <p>East Cluster 的训练队列等待时长超过阈值，GPU 实际使用率与分配率出现明显背离。</p>
-                                    <div class="slide-15-alert-tags">
-                                        <span>Scheduler</span>
-                                        <span>GPU Pool</span>
-                                        <span>P95 Queue</span>
-                                    </div>
-                                </article>
-
-                                <article class="slide-15-alert-card severity-warning">
-                                    <div class="slide-15-alert-topline">
-                                        <span class="severity-label">Warning</span>
-                                        <span class="severity-time">11 min ago</span>
-                                    </div>
-                                    <h4>API 路由回退比例短时抬升</h4>
-                                    <p>模型网关检测到主路由响应抖动，部分请求自动回退到备用模型供应商。</p>
-                                    <div class="slide-15-alert-tags">
-                                        <span>Gateway</span>
-                                        <span>Fallback</span>
-                                        <span>Token Cost</span>
-                                    </div>
-                                </article>
-
-                                <article class="slide-15-alert-card severity-info">
-                                    <div class="slide-15-alert-topline">
-                                        <span class="severity-label">Audit</span>
-                                        <span class="severity-time">27 min ago</span>
-                                    </div>
-                                    <h4>推理服务配置发生灰度变更</h4>
-                                    <p>实例副本、镜像版本与限流策略均被完整记录，可追溯到工单与操作人。</p>
-                                    <div class="slide-15-alert-tags">
-                                        <span>Release</span>
-                                        <span>Trace ID</span>
-                                        <span>Policy Diff</span>
-                                    </div>
-                                </article>
-                            </div>
-
-                            <div class="slide-15-health-card">
-                                <div class="slide-15-health-head">
-                                    <span class="rail-kicker">Service Health</span>
-                                    <strong>核心平面状态</strong>
-                                </div>
-                                <div class="slide-15-health-list">
-                                    <div class="slide-15-health-item healthy">
-                                        <span>Inference Service</span>
-                                        <strong>98.7%</strong>
-                                    </div>
-                                    <div class="slide-15-health-item healthy">
-                                        <span>Model Gateway</span>
-                                        <strong>99.2%</strong>
-                                    </div>
-                                    <div class="slide-15-health-item degraded">
-                                        <span>Experiment Tracking</span>
-                                        <strong>96.4%</strong>
-                                    </div>
-                                    <div class="slide-15-health-item healthy">
-                                        <span>Audit Pipeline</span>
-                                        <strong>100%</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </aside>
-
                         <div class="slide-15-stage">
                             <div class="slide-15-stage-shell">
                                 <div class="slide-15-stage-top">
@@ -2530,7 +2461,6 @@
                         <div class="slide-16-arena">
                             <div class="slide-16-arena-head">
                                 <div class="slide-16-arena-copy">
-                                    <span class="slide-16-kicker">Competitive Landscape</span>
                                     <h3>对比的核心不在“有没有”，而在这些能力是不是原生收敛在同一个企业级平台里</h3>
                                 </div>
                                 <div class="slide-16-arena-badge">
