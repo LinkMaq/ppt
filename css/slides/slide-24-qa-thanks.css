@@ -73,8 +73,8 @@
     flex: 1;
     min-height: 0;
     display: grid;
-    grid-template-columns: minmax(0, 1.02fr) minmax(560px, 0.98fr);
-    gap: 40px;
+    grid-template-columns: minmax(0, 0.94fr) minmax(720px, 1.06fr);
+    gap: 34px;
     align-items: stretch;
 }
 
@@ -189,7 +189,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 86px 0 18px;
+    padding: 82px 0 18px;
     opacity: 0;
     transform: translateX(28px);
     transition: opacity 0.82s ease 0.26s, transform 0.82s ease 0.26s;
@@ -198,9 +198,10 @@
 .slide-24-scan-card {
     position: relative;
     width: 100%;
-    max-width: 640px;
-    padding: 28px 30px 28px;
+    max-width: 716px;
+    padding: 28px 32px 28px;
     border-radius: 38px;
+    overflow: hidden;
     background: rgba(255, 255, 255, 0.96);
     border: 1px solid rgba(30, 96, 248, 0.13);
     box-shadow: 0 30px 60px rgba(15, 23, 42, 0.11);
@@ -261,12 +262,13 @@
 
 .slide-24-contact-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 1.28fr) minmax(0, 1fr);
+    gap: 14px;
 }
 
 .contact-grid-item {
-    padding: 16px 16px 18px;
+    min-height: 80px;
+    padding: 16px 18px 18px;
     border-radius: 22px;
     background: linear-gradient(135deg, rgba(248, 250, 252, 0.96), rgba(239, 246, 255, 0.96));
     border: 1px solid rgba(30, 96, 248, 0.08);
@@ -275,7 +277,7 @@
 .contact-type {
     display: block;
     margin-bottom: 10px;
-    font-size: 12px;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.08em;
     color: #64748B;
@@ -284,19 +286,29 @@
 
 .contact-grid-item strong {
     display: block;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.5;
     color: #0F172A;
     word-break: break-word;
 }
 
 .slide-24-scan-footer {
+    position: relative;
     display: flex;
     justify-content: center;
     gap: 12px;
     margin-top: 18px;
-    padding-top: 18px;
-    border-top: 1px solid rgba(30, 96, 248, 0.08);
+    padding-top: 19px;
+}
+
+.slide-24-scan-footer::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 0;
+    height: 1px;
+    background: rgba(30, 96, 248, 0.08);
 }
 
 .slide-24-scan-footer span {
