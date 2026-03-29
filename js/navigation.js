@@ -4,6 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slide');
+    const slideList = Array.from(slides);
     const totalSlides = slides.length;
     let currentSlideIndex = 0;
     let lastWheelNavigationAt = 0;
@@ -53,7 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
         slideTitle.textContent = title ? title : `Slide ${index + 1}`;
 
         // 使用 History API 同步路由，避免浏览器按锚点滚动到对应 section
-        const targetHash = `#slide-${index + 1}`;
+        const currentSlideId = slides[index].id;
+        const targetHash = currentSlideId ? `#${currentSlideId}` : `#slide-${index + 1}`;
         if (window.location.hash !== targetHash) {
             isSyncingHash = true;
             window.history.replaceState(null, '', targetHash);
@@ -152,11 +154,18 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0, 0);
 
         if (window.location.hash) {
-            const match = window.location.hash.match(/slide-(\d+)/);
+            const targetId = window.location.hash.replace(/^#/, '');
+            const targetIndex = slideList.findIndex((slide) => slide.id === targetId);
+            if (targetIndex >= 0 && targetIndex < totalSlides) {
+                updateSlide(targetIndex);
+                return;
+            }
+
+            const match = targetId.match(/slide-(\d+)/);
             if (match && match[1]) {
-                const targetIndex = parseInt(match[1]) - 1;
-                if (targetIndex >= 0 && targetIndex < totalSlides) {
-                    updateSlide(targetIndex);
+                const fallbackIndex = parseInt(match[1], 10) - 1;
+                if (fallbackIndex >= 0 && fallbackIndex < totalSlides) {
+                    updateSlide(fallbackIndex);
                     return;
                 }
             }

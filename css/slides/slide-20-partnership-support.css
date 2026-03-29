@@ -1,0 +1,345 @@
+/* =========================================
+   Slide 20: 商业合作与服务支持
+   风格：服务链路 + 客户成功中枢
+   ========================================= */
+
+#slide-20 {
+    position: absolute;
+    overflow: hidden;
+    padding: 42px 56px 24px;
+    color: var(--color-text-main);
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(circle at 10% 14%, rgba(30, 96, 248, 0.12) 0%, rgba(30, 96, 248, 0) 24%),
+        radial-gradient(circle at 86% 18%, rgba(14, 165, 233, 0.11) 0%, rgba(14, 165, 233, 0) 22%),
+        radial-gradient(circle at 72% 84%, rgba(16, 185, 129, 0.09) 0%, rgba(16, 185, 129, 0) 24%),
+        linear-gradient(180deg, #FFFFFF 0%, #F7FAFF 54%, #EEF5FF 100%);
+}
+
+.slide-20-bg-grid,
+.slide-20-bg-glow,
+.slide-20-bg-ribbon {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.slide-20-bg-grid {
+    background-image:
+        linear-gradient(rgba(30, 96, 248, 0.032) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 96, 248, 0.032) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.96) 34%, rgba(0, 0, 0, 0.56) 76%, transparent 100%);
+    animation: slide-20-grid-drift 34s linear infinite;
+}
+
+.slide-20-bg-glow {
+    background:
+        radial-gradient(circle at 24% 78%, rgba(59, 130, 246, 0.09) 0%, rgba(59, 130, 246, 0) 22%),
+        radial-gradient(circle at 70% 36%, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0) 20%),
+        radial-gradient(circle at 88% 74%, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0) 18%);
+}
+
+.slide-20-bg-ribbon::before,
+.slide-20-bg-ribbon::after {
+    content: '';
+    position: absolute;
+    border-radius: 999px;
+}
+
+.slide-20-bg-ribbon::before {
+    width: 1040px;
+    height: 1040px;
+    left: 476px;
+    top: 84px;
+    border: 1px solid rgba(30, 96, 248, 0.07);
+}
+
+.slide-20-bg-ribbon::after {
+    width: 960px;
+    height: 240px;
+    left: 460px;
+    top: 602px;
+    background: linear-gradient(90deg, rgba(30, 96, 248, 0), rgba(30, 96, 248, 0.1), rgba(14, 165, 233, 0.08), rgba(16, 185, 129, 0.08), rgba(30, 96, 248, 0));
+    filter: blur(30px);
+}
+
+.slide-20-header,
+.slide-20-body,
+.slide-20-footer {
+    position: relative;
+    z-index: 2;
+}
+
+.slide-20-header {
+    margin-bottom: 18px;
+    opacity: 0;
+    transform: translateY(-22px);
+    transition: opacity 0.72s ease 0.12s, transform 0.72s ease 0.12s;
+}
+
+.slide-20-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 44px;
+    font-weight: 800;
+    color: #0F172A;
+}
+
+.slide-20-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    width: 114px;
+    height: 6px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #1E60F8, #0EA5E9, #10B981);
+}
+
+.slide-20-subtitle {
+    max-width: 1240px;
+    font-size: 22px;
+    line-height: 1.58;
+    font-weight: 500;
+    color: #475569;
+}
+
+.slide-20-body {
+    flex: 1;
+    min-height: 0;
+}
+
+.slide-20-stage {
+    width: 100%;
+    height: 738px;
+    position: relative;
+}
+
+.slide-20-service-map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding: 132px 92px 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 42px;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.82s ease 0.26s, transform 0.82s ease 0.26s;
+}
+
+.slide-20-kicker {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: rgba(30, 96, 248, 0.08);
+    color: #1D4ED8;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.slide-20-service-path {
+    position: absolute;
+    inset: 34px 90px 40px 90px;
+    pointer-events: none;
+}
+
+.slide-20-service-path::before,
+.slide-20-service-path::after {
+    content: '';
+    position: absolute;
+    border-radius: 999px;
+}
+
+.slide-20-service-path::before {
+    left: 128px;
+    top: 52px;
+    width: 1160px;
+    height: 420px;
+    border: 2px dashed rgba(30, 96, 248, 0.18);
+    border-left-color: rgba(30, 96, 248, 0.32);
+    border-bottom-color: rgba(16, 185, 129, 0.26);
+    transform: rotate(9deg);
+}
+
+.slide-20-service-path::after {
+    left: 244px;
+    top: 206px;
+    width: 1040px;
+    height: 210px;
+    background: linear-gradient(90deg, rgba(30, 96, 248, 0), rgba(30, 96, 248, 0.12), rgba(14, 165, 233, 0.08), rgba(16, 185, 129, 0.12), rgba(30, 96, 248, 0));
+    filter: blur(24px);
+    transform: rotate(8deg);
+}
+
+.slide-20-phase-card {
+    position: relative;
+    width: 100%;
+    padding: 26px 26px 24px;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid rgba(30, 96, 248, 0.12);
+    box-shadow: 0 22px 44px rgba(15, 23, 42, 0.1);
+    opacity: 0;
+    transition: opacity 0.78s ease, transform 0.78s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.slide-20-phase-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 5px;
+    border-radius: 32px 32px 0 0;
+}
+
+.slide-20-phase-card:hover {
+    box-shadow: 0 28px 52px rgba(15, 23, 42, 0.13);
+}
+
+.phase-discovery {
+    margin-top: 0;
+    transform: translateY(22px);
+}
+
+.phase-delivery {
+    margin-top: 0;
+    transform: translateY(22px);
+}
+
+.phase-operations {
+    margin-top: 0;
+    transform: translateY(22px);
+}
+
+.phase-discovery::before {
+    background: linear-gradient(90deg, rgba(30, 96, 248, 0.92), rgba(14, 165, 233, 0.82));
+}
+
+.phase-delivery::before {
+    background: linear-gradient(90deg, rgba(30, 96, 248, 0.92), rgba(16, 185, 129, 0.8));
+}
+
+.phase-operations::before {
+    background: linear-gradient(90deg, rgba(14, 165, 233, 0.9), rgba(16, 185, 129, 0.84));
+}
+
+.phase-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.phase-index,
+.phase-tag {
+    min-height: 30px;
+    padding: 0 12px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.phase-index {
+    background: rgba(30, 96, 248, 0.08);
+    color: #1D4ED8;
+}
+
+.phase-tag {
+    background: rgba(15, 23, 42, 0.05);
+    color: #475569;
+}
+
+.slide-20-phase-card h3 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    line-height: 1.28;
+    font-weight: 800;
+    color: #0F172A;
+}
+
+.slide-20-phase-card p {
+    font-size: 18px;
+    line-height: 1.72;
+    color: #475569;
+}
+
+.slide-20-phase-card ul {
+    margin-top: 16px;
+    padding-left: 18px;
+    display: grid;
+    gap: 10px;
+}
+
+.slide-20-phase-card li {
+    color: #334155;
+    font-size: 18px;
+    line-height: 1.58;
+    font-weight: 600;
+}
+
+.slide-20-footer {
+    margin-top: 18px;
+    padding: 18px 28px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #0F172A 0%, #103B8A 46%, #1E60F8 100%);
+    color: #F8FBFF;
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: 700;
+    box-shadow: 0 24px 40px rgba(15, 23, 42, 0.18);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.72s ease 0.88s, transform 0.72s ease 0.88s;
+}
+
+#slide-20.active .slide-20-header,
+#slide-20.active .slide-20-body .slide-20-service-map,
+#slide-20.active .slide-20-footer {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+#slide-20.active .phase-discovery,
+#slide-20.active .phase-delivery,
+#slide-20.active .phase-operations {
+    opacity: 1;
+}
+
+#slide-20.active .phase-discovery {
+    transform: translateY(0);
+    transition-delay: 0.38s;
+}
+
+#slide-20.active .phase-delivery {
+    transform: translateY(0);
+    transition-delay: 0.52s;
+}
+
+#slide-20.active .phase-operations {
+    transform: translateY(0);
+    transition-delay: 0.66s;
+}
+
+@keyframes slide-20-grid-drift {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50px, -50px, 0);
+    }
+}

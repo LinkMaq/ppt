@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/slides/slide-03-genesis.css?v=20260328-3">
     <link rel="stylesheet" href="css/slides/slide-04-landscape.css?v=20260328-5">
     <link rel="stylesheet" href="css/slides/slide-05-dual-console.css?v=20260328-1">
-    <link rel="stylesheet" href="css/slides/slide-06-workbench.css?v=20260329-2">
+    <link rel="stylesheet" href="css/slides/slide-06-workbench.css?v=20260329-4">
     <link rel="stylesheet" href="css/slides/slide-07-heterogeneous.css?v=20260328-1">
     <link rel="stylesheet" href="css/slides/slide-08-inference-tuning.css?v=20260328-1">
     <link rel="stylesheet" href="css/slides/slide-09-gateway.css?v=20260328-1">
@@ -31,10 +31,12 @@
     <link rel="stylesheet" href="css/slides/slide-11-app-market.css?v=20260329-1">
     <link rel="stylesheet" href="css/slides/slide-12-chatapp.css?v=20260329-1">
     <link rel="stylesheet" href="css/slides/slide-13-boss.css?v=20260329-2">
-    <link rel="stylesheet" href="css/slides/slide-14-rbac.css?v=20260329-13">
+    <link rel="stylesheet" href="css/slides/slide-14-rbac.css?v=20260329-14">
     <link rel="stylesheet" href="css/slides/slide-15-observability.css?v=20260329-1">
     <link rel="stylesheet" href="css/slides/slide-16-market-comparison.css?v=20260329-1">
     <link rel="stylesheet" href="css/slides/slide-17-why-rune.css?v=20260329-1">
+    <link rel="stylesheet" href="css/slides/slide-19-delivery-options.css?v=20260329-1">
+    <link rel="stylesheet" href="css/slides/slide-20-partnership-support.css?v=20260329-1">
 </head>
 <body>
     <!-- 整体演示容器 -->
@@ -2120,35 +2122,27 @@
 
                                     <div class="slide-14-channel-row">
                                         <div class="slide-14-channel-card">
-                                            <span class="channel-kicker">CPU 资源</span>
-                                            <p>为租户分配专属 CPU 算力，保障基础计算性能与隔离</p>
+                                            <span class="channel-kicker">Quota Pool</span>
+                                            <p>每个租户拥有独立 CPU / GPU / Memory / Storage 上限</p>
                                             <div class="slide-14-channel-tags">
-                                                <span>独享份额</span>
-                                                <span>配额管控</span>
+                                                <span>Hard Limit</span>
+                                                <span>申请审批</span>
                                             </div>
                                         </div>
                                         <div class="slide-14-channel-card">
-                                            <span class="channel-kicker">内存资源</span>
-                                            <p>独立的内存运行空间，确保租户计算任务与数据环境独立</p>
+                                            <span class="channel-kicker">Namespace Fence</span>
+                                            <p>工作空间与运行实例隔离到独立命名空间和运行域</p>
                                             <div class="slide-14-channel-tags">
-                                                <span>容量隔离</span>
-                                                <span>性能保障</span>
+                                                <span>Workspace</span>
+                                                <span>Runtime Scope</span>
                                             </div>
                                         </div>
                                         <div class="slide-14-channel-card">
-                                            <span class="channel-kicker">GPU 资源</span>
-                                            <p>独立的计算加速卡分配，支持大规模模型训练与推理</p>
+                                            <span class="channel-kicker">Data &amp; Secret Scope</span>
+                                            <p>存储路径、镜像可见性和 API Key 都围绕租户边界收口</p>
                                             <div class="slide-14-channel-tags">
-                                                <span>算力隔离</span>
-                                                <span>精细调度</span>
-                                            </div>
-                                        </div>
-                                        <div class="slide-14-channel-card">
-                                            <span class="channel-kicker">存储资源</span>
-                                            <p>隔离的高性能存储域，保障业务模型及数据的读写安全</p>
-                                            <div class="slide-14-channel-tags">
-                                                <span>独立空间</span>
-                                                <span>数据隔离</span>
+                                                <span>Storage Domain</span>
+                                                <span>Secret Policy</span>
                                             </div>
                                         </div>
                                     </div>
@@ -2892,6 +2886,166 @@
 
                     <div class="slide-17-footer">
                         Rune AI 的价值不在某一项功能更强，而在于用可私有化、可分阶段建设、可持续演进的平台能力，为企业级 AI 应用提供一套更稳的长期基础
+                    </div>
+                </section>
+
+                <!-- Slide 19: 灵活的交付选项 -->
+                <section class="slide" id="slide-19" data-title="灵活的交付选项">
+                    <div class="slide-19-bg-grid"></div>
+                    <div class="slide-19-bg-glow"></div>
+                    <div class="slide-19-bg-sheen"></div>
+
+                    <div class="slide-19-header">
+                        <h2 class="slide-19-title">灵活的交付选项</h2>
+                        <p class="slide-19-subtitle">从轻量试点到集团化运营，企业可以像选择产品版本一样选择最适合当前阶段的 Rune 部署方案。</p>
+                    </div>
+
+                    <div class="slide-19-body">
+                        <div class="slide-19-compare-shell">
+                            <div class="slide-19-card-grid">
+                                <article class="slide-19-plan-card slide-19-plan-card-starter">
+                                    <div class="plan-card-top">
+                                        <span class="plan-tier">01 Starter</span>
+                                        <span class="plan-fit">适合 POC</span>
+                                    </div>
+                                    <h3>单机体验版</h3>
+                                    <p class="plan-description">面向方案验证、售前演示和小型团队试用，以最小资源成本快速搭建完整平台闭环。</p>
+                                    <div class="plan-emblem">
+                                        <span>部署形态</span>
+                                        <strong>1 节点</strong>
+                                        <small>All-in-One</small>
+                                    </div>
+                                    <div class="plan-spec-list">
+                                        <div class="plan-spec-row"><span>适用阶段</span><strong>预研 / Demo / POC</strong></div>
+                                        <div class="plan-spec-row"><span>建设目标</span><strong>最快建立可验证环境</strong></div>
+                                        <div class="plan-spec-row"><span>升级路径</span><strong>平滑迁移到 HA 集群</strong></div>
+                                    </div>
+                                    <div class="plan-feature-list">
+                                        <span>快速安装</span>
+                                        <span>完整体验模型与网关能力</span>
+                                        <span>适合作为内部试跑基线</span>
+                                    </div>
+                                </article>
+
+                                <article class="slide-19-plan-card slide-19-plan-card-ha is-featured">
+                                    <div class="plan-card-top">
+                                        <span class="plan-tier">02 Professional</span>
+                                        <span class="plan-fit plan-fit-featured">推荐生产</span>
+                                    </div>
+                                    <h3>集群高可用版</h3>
+                                    <p class="plan-description">面向正式生产环境，构建高可用控制面与可扩展节点池，兼顾稳定性、弹性与持续升级能力。</p>
+                                    <div class="plan-emblem">
+                                        <span>部署形态</span>
+                                        <strong>HA 集群</strong>
+                                        <small>Multi-Master + Worker Pool</small>
+                                    </div>
+                                    <div class="plan-spec-list">
+                                        <div class="plan-spec-row"><span>适用阶段</span><strong>生产上线 / 多业务承载</strong></div>
+                                        <div class="plan-spec-row"><span>建设目标</span><strong>保障业务连续性与可维护性</strong></div>
+                                        <div class="plan-spec-row"><span>升级路径</span><strong>横向扩容并升级到联邦治理</strong></div>
+                                    </div>
+                                    <div class="plan-feature-list">
+                                        <span>多主节点高可用</span>
+                                        <span>滚动升级与弹性扩容</span>
+                                        <span>适合企业正式生产标准化交付</span>
+                                    </div>
+                                </article>
+
+                                <article class="slide-19-plan-card slide-19-plan-card-federation">
+                                    <div class="plan-card-top">
+                                        <span class="plan-tier">03 Enterprise</span>
+                                        <span class="plan-fit">适合集团化</span>
+                                    </div>
+                                    <h3>多集群联邦版</h3>
+                                    <p class="plan-description">面向跨地域、跨数据中心或多组织协同的大型企业，把多个独立集群收敛为统一运营网络。</p>
+                                    <div class="plan-emblem">
+                                        <span>部署形态</span>
+                                        <strong>Federation</strong>
+                                        <small>Multi-Cluster / Multi-Region</small>
+                                    </div>
+                                    <div class="plan-spec-list">
+                                        <div class="plan-spec-row"><span>适用阶段</span><strong>集团化部署 / 多中心纳管</strong></div>
+                                        <div class="plan-spec-row"><span>建设目标</span><strong>实现跨地域统一治理与全局可视</strong></div>
+                                        <div class="plan-spec-row"><span>升级路径</span><strong>支持组织边界继续扩张</strong></div>
+                                    </div>
+                                    <div class="plan-feature-list">
+                                        <span>统一联邦纳管</span>
+                                        <span>分域自治与全局运营并存</span>
+                                        <span>适合复杂组织和多地部署场景</span>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide-19-footer">
+                        Rune 不是把企业推向唯一部署答案，而是提供一条从“快速验证”到“生产高可用”再到“多地域联邦”的渐进式交付路径，让平台建设节奏始终匹配企业当前 IT 现状与未来扩张计划
+                    </div>
+                </section>
+
+                <!-- Slide 20: 商业合作与服务支持 -->
+                <section class="slide" id="slide-20" data-title="商业合作与服务支持">
+                    <div class="slide-20-bg-grid"></div>
+                    <div class="slide-20-bg-glow"></div>
+                    <div class="slide-20-bg-ribbon"></div>
+
+                    <div class="slide-20-header">
+                        <h2 class="slide-20-title">商业合作与服务支持</h2>
+                        <p class="slide-20-subtitle">Rune 将售前咨询、架构设计、驻场实施、定制开发、培训赋能与长期运维串成一条完整服务链路，确保项目不是“上线即结束”，而是“落地后持续成功”。</p>
+                    </div>
+
+                    <div class="slide-20-body">
+                        <div class="slide-20-stage">
+                            <div class="slide-20-service-map">
+                                <div class="slide-20-service-path" aria-hidden="true"></div>
+
+                                <article class="slide-20-phase-card phase-discovery">
+                                    <div class="phase-topline">
+                                        <span class="phase-index">01</span>
+                                        <span class="phase-tag">Consulting</span>
+                                    </div>
+                                    <h3>售前咨询与架构设计</h3>
+                                    <p>结合客户现有 IT 现状、业务目标与合规要求，输出平台建设路径、资源规划与分阶段上线方案。</p>
+                                    <ul>
+                                        <li>现状调研与需求梳理</li>
+                                        <li>PoC 方案与目标边界定义</li>
+                                        <li>部署架构与容量规划建议</li>
+                                    </ul>
+                                </article>
+
+                                <article class="slide-20-phase-card phase-delivery">
+                                    <div class="phase-topline">
+                                        <span class="phase-index">02</span>
+                                        <span class="phase-tag">Delivery</span>
+                                    </div>
+                                    <h3>驻场实施与定制开发</h3>
+                                    <p>围绕企业环境、国产算力、业务流程与组织边界进行联合交付，确保平台能力真正进入生产体系。</p>
+                                    <ul>
+                                        <li>现场部署、联调与割接支持</li>
+                                        <li>按需适配流程、模板与集成接口</li>
+                                        <li>关键里程碑验收与上线陪跑</li>
+                                    </ul>
+                                </article>
+
+                                <article class="slide-20-phase-card phase-operations">
+                                    <div class="phase-topline">
+                                        <span class="phase-index">03</span>
+                                        <span class="phase-tag">Success</span>
+                                    </div>
+                                    <h3>7x24 支持与培训赋能</h3>
+                                    <p>上线后持续提供问题响应、巡检优化、版本升级与角色化培训，让平台能力真正被团队稳定使用和复制。</p>
+                                    <ul>
+                                        <li>故障响应与专家支持通道</li>
+                                        <li>运维巡检、升级与最佳实践回传</li>
+                                        <li>管理员与开发者分层培训</li>
+                                    </ul>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide-20-footer">
+                        Rune 提供的不是单点技术支持，而是一套覆盖“方案共创、实施落地、运维陪跑、培训赋能”的企业级合作体系，确保项目从 PoC 到生产运营都有人负责、有人陪跑、有人持续优化
                     </div>
                 </section>
 

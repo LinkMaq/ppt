@@ -252,7 +252,7 @@
 .slide-16-grid-cell.dimension-head {
     background: linear-gradient(135deg, rgba(226, 232, 240, 0.72), rgba(241, 245, 249, 0.94));
     color: #0F172A;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 800;
     display: flex;
     align-items: center;
@@ -292,14 +292,14 @@
 }
 
 .vendor-name {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 800;
     line-height: 1.14;
     color: #0F172A;
 }
 
 .vendor-role {
-    font-size: 10.5px;
+    font-size: 14px;
     font-weight: 700;
     color: #64748B;
     letter-spacing: 0.04em;
@@ -314,13 +314,13 @@
 }
 
 .dimension-cell strong {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.24;
     color: #0F172A;
 }
 
 .dimension-cell span {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.38;
     color: #64748B;
 }
@@ -332,7 +332,7 @@
 }
 
 .compare-cell p {
-    font-size: 12.5px;
+    font-size: 14px;
     line-height: 1.4;
     color: #475569;
 }
@@ -445,7 +445,7 @@
 
 .hero-card p {
     margin-bottom: 16px;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.54;
     color: #475569;
 }
@@ -628,13 +628,13 @@
 
 .slide-16-embedded-insight h4 {
     margin-bottom: 0;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.22;
     color: #0F172A;
 }
 
 .slide-16-embedded-insight p {
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.4;
     color: #475569;
 }

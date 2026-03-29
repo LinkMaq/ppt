@@ -478,30 +478,6 @@
     color: #1E3A8A;
 }
 
-.accent-blue::before {
-    background: linear-gradient(180deg, #1E60F8, #60A5FA);
-}
-
-.accent-green::before {
-    background: linear-gradient(180deg, #10B981, #34D399);
-}
-
-.accent-amber::before {
-    background: linear-gradient(180deg, #F59E0B, #FBBF24);
-}
-
-.accent-violet::before {
-    background: linear-gradient(180deg, #8B5CF6, #A78BFA);
-}
-
-.accent-cyan::before {
-    background: linear-gradient(180deg, #0891B2, #22D3EE);
-}
-
-.accent-slate::before {
-    background: linear-gradient(180deg, #334155, #64748B);
-}
-
 .card-2,
 .card-5 {
     transform: translateY(18px);
@@ -660,42 +636,42 @@
 
 .slide-17-orbit-item.pos-left-top {
     left: 88px;
-    top: 54px;
+    top: 72px;
     justify-content: flex-start;
     --node-color: #1E60F8;
 }
 
 .slide-17-orbit-item.pos-left-mid {
     left: 88px;
-    top: 224px;
+    top: 296px;
     justify-content: flex-start;
     --node-color: #8B5CF6;
 }
 
 .slide-17-orbit-item.pos-left-bottom {
     left: 88px;
-    top: 394px;
+    top: 520px;
     justify-content: flex-start;
     --node-color: #334155;
 }
 
 .slide-17-orbit-item.pos-right-top {
     right: 88px;
-    top: 54px;
+    top: 72px;
     text-align: right;
     --node-color: #10B981;
 }
 
 .slide-17-orbit-item.pos-right-mid {
     right: 88px;
-    top: 224px;
+    top: 296px;
     text-align: right;
     --node-color: #F59E0B;
 }
 
 .slide-17-orbit-item.pos-right-bottom {
     right: 88px;
-    top: 394px;
+    top: 520px;
     text-align: right;
     --node-color: #0891B2;
 }
